@@ -5,8 +5,11 @@
 
   <% @restaurants.each do |restaurant| %>
     <%= link_to restaurant_path(restaurant) do %>
-      <div class="px-5 py-3 mb-5 bg-white rounded">
+      <div class="px-5 py-3 mb-5 bg-white rounded d-flex justify-content-between">
         <p><%= restaurant.name %></p>
+        <%= link_to restaurant, method: :delete, remote: true, class: "btn btn-outline-warning" do %>
+          <i class="fas fa-times"></i>
+        <% end %>
       </div>
     <% end %>
   <% end %>
