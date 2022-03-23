@@ -1,7 +1,13 @@
-<h1>Restaurants</h1>
+<div class="container mt-5">
+  <div class="px-5 py-3 mb-5 bg-white rounded shadow">
+    <h1 class="fw-bold">Restaurants</h1>
+  </div>
 
-<ul>
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <%= link_to restaurant_path(restaurant) do %>
+      <div class="px-5 py-3 mb-5 bg-white rounded">
+        <p><%= restaurant.name %></p>
+      </div>
+    <% end %>
   <% end %>
-</ul>
+</div>
